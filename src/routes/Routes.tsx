@@ -12,6 +12,7 @@ import Products from '../pages/admin/Products'
 import User from '../pages/admin/User'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
+import BecomeFarmer from '../pages/user/BecomeFarmer'
 
 
 const routes = createBrowserRouter([
@@ -47,6 +48,10 @@ const routes = createBrowserRouter([
                 path: "/contact",
                 element: <Contact />
             },
+            {
+                path: "/becomeFarmer",
+                element: <BecomeFarmer />
+            }
             
         ]
     },

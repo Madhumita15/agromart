@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <header className="w-full sticky top-0 z-50 shadow-md ">
       <nav className="bg-yellow-400 relative p-2">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-full mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
           
           {/* লোগো সেকশন */}
           <NavLink to="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
@@ -59,6 +59,7 @@ const Navbar = () => {
                   খুঁজুন
                 </button>
               </form>
+              <button onClick={()=> {navigate("/becomeFarmer");setMobileOpen(false)}}  className="text-sm font-bold bg-green-800 text-white  px-5 py-2 rounded-lg hover:bg-white hover:border-2 hover:border-green-800 hover:text-green-800 border-2 border-transparent transition-all duration-200">কৃষক হোন</button>
 
               <button 
                 onClick={() => navigate("/login")} 
@@ -118,6 +119,8 @@ const Navbar = () => {
                   খুঁজুন
                 </button>
               </form>
+
+              <button onClick={()=> {navigate("/becomeFarmer");setMobileOpen(false)}} className="w-full text-center text-sm font-bold bg-green-800 text-white py-2.5 rounded-lg hover:bg-green-900 block">কৃষক হোন</button>
 
               <button 
                 onClick={() => { navigate("/login"); setMobileOpen(false); }} 
