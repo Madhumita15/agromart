@@ -1,14 +1,14 @@
 import type { InputInterface } from "../../../typescript/interface/auth.interface";
 
 export const login: InputInterface[] = [
-    {
-        label: "ইমেইল ঠিকানা",
+   {
+        label: "loginPage.emailLabel",
         type: "text",
         required: true,
         name: "email"
     },
     {
-        label: "পাসওয়ার্ড",
+        label: "loginPage.passwordLabel",
         type: "password",
         required: true,
         name: "password"

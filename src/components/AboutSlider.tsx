@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,10 +12,12 @@ import bgimg5 from "../assets/bgimg7.jpg";
 import bgimg6 from "../assets/bgimg9.jpg";
 
 const AboutSlider = () => {
+  const { t } = useTranslation();
+
   const slides = [
-    { img: bgimg4, title: "আপনার ফসল উৎপাদনের নির্ভরযোগ্য অংশীদার" },
-    { img: bgimg5, title: "বিশেষজ্ঞ কৃষি সমাধান" },
-    { img: bgimg6, title: "টেকসই কৃষির ভবিষ্যৎ" },
+    { img: bgimg4, titleKey: "aboutSlider.slide1.title" },
+    { img: bgimg5, titleKey: "aboutSlider.slide2.title" },
+    { img: bgimg6, titleKey: "aboutSlider.slide3.title" },
   ];
 
   return (
@@ -37,7 +40,7 @@ const AboutSlider = () => {
           delay: 2000,
           disableOnInteraction: false,
         }}
-        loop={true} // Smooth fade transition like Bootstrap
+        loop={true}
         className="mySwiper h-full w-full"
       >
         {slides.map((slide, index) => (
@@ -49,12 +52,12 @@ const AboutSlider = () => {
                 alt={`banner-${index}`}
               />
               {/* Overlay Content */}
-              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center pt-60 text-center px-4">
-                <h1 className="text-white text-3xl md:text-4xl  font-bold animate-fadeInDown">
-                  {slide.title}
+              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center pt-20 text-center px-4">
+                <h1 className="text-white text-3xl md:text-4xl font-bold animate-fadeInDown">
+                  {t(slide.titleKey)}
                 </h1>
-                <p className="text-white text-sm md:text-xl mt-9 max-w-5xl animate-fadeInUp">
-                  দি অ্যাগ্রোমার্ট গ্রুপ পূর্ব কানাডা জুড়ে কৃষি উৎপাদনকারী ও কৃষকদের সার, ফসল সুরক্ষা, কাস্টম অ্যাপ্লিকেশন (বিশেষায়িত সার ও কীটনাশক প্রয়োগ), বীজ পণ্য এবং সংশ্লিষ্ট অন্যান্য সেবা প্রদান করে থাকে।
+                <p className="text-white text-sm md:text-xl mt-6 max-w-5xl animate-fadeInUp leading-relaxed">
+                  {t("aboutSlider.description")}
                 </p>
               </div>
             </div>

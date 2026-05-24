@@ -22,6 +22,7 @@ import user5img from "../../assets/user5.jpg";
 import user6img from "../../assets/user6.jpg";
 import user7img from "../../assets/user6.jpg";
 import user8img from "../../assets/user5.jpg";
+import { useTranslation } from "react-i18next";
 
 interface Testimonial {
   id: number;
@@ -41,83 +42,79 @@ interface Product {
   image: string;
 }
 
-// ক্যাটাগরি ডেটা বাংলায় রূপান্তর করা হলো
+
 const productCategory = [
   {
     id: 1,
-    name: "শাকসবজি",
+    name: "vegetables",
   },
   {
     id: 2,
-    name: "চাল",
+    name: "rice",
   },
   {
     id: 3,
-    name: "ফসল ও দানাশস্য",
+    name: "crops",
   },
   {
     id: 4,
-    name: "বাদাম ও বীজ",
+    name: "seeds",
   },
 ];
 
 const products: Product[] = [
   {
     id: 1,
-    name: "তাজা আলু",
+    name: "products.potatoes",
     originalPrice: 30,
     currentPrice: 20,
     discount: 10,
-    description:
-      "সেরা স্বাদ এবং স্বাস্থ্যকর জীবনের জন্য প্রাকৃতিকভাবে উৎপাদিত, পুষ্টিসমৃদ্ধ আলু।",
+    description: "products.productspotatoesDesc",
     image: productimg1,
   },
   {
     id: 2,
-    name: "উন্নত মানের বেগুন উৎপাদন",
+    name: "products.eggplant",
     originalPrice: 20,
     currentPrice: 50,
     discount: 20,
-    description:
-      "খামার থেকে বাজারে ধারাবাহিক গুণগত মান এবং সতেজতাসহ খামারের তাজা বেগুন সরবরাহ করা হচ্ছে।",
+    description: "products.eggplantDesc",
     image: productimg2,
   },
   {
     id: 3,
-    name: "তাজা টমেটো",
+    name: "products.tomato",
     originalPrice: 100,
     currentPrice: 80,
     discount: 20,
-    description:
-      "প্রাকৃতিকভাবে উৎপাদিত, পুষ্টিগুণে ভরপুর রসালো টমেটো যা প্রতিদিনের রান্নার জন্য একদম নিখুঁত।",
+    description: "products.tomatoDesc",
     image: productimg3,
   },
   {
     id: 4,
-    name: "তাজা পটল",
+    name: "products.pointedGourd",
     originalPrice: 30,
     currentPrice: 20,
     discount: 10,
-    description:
-      "স্বাস্থ্যকর ও সুস্বাদু খাবারের জন্য প্রাকৃতিকভাবে উৎপাদিত, পুষ্টিসমৃদ্ধ পটল।",
+    description: "products.pointedGourdDesc",
     image: productimg4,
   },
   {
     id: 5,
-    name: "ঢ্যাঁড়শ চাষ",
+    name: "products.okra",
     originalPrice: 30,
     currentPrice: 20,
-    description:
-      "উন্নত ফলন এবং চমৎকার স্বাদ নিশ্চিত করতে আধুনিক কৃষি পদ্ধতিতে উৎপাদিত তাজা ও উচ্চ মানের ঢ্যাঁড়শ।",
+    discount: 0, // Set to 0 if no discount
+    description: "products.okraDesc",
     image: productimg5,
   },
   {
     id: 6,
-    name: "তাজা করলা",
+    name: "products.bitterGourd",
     originalPrice: 30,
     currentPrice: 60,
-    description:
-      "প্রাকৃতিকভাবে উৎপাদিত, পুষ্টিসমৃদ্ধ করলা যা এর স্বাস্থ্যগত উপকারিতা এবং অনন্য স্বাদের জন্য পরিচিত।",
+    discount: 0,
+    description: "products.bitterGourdDesc",
     image: productimg6,
   },
 ];
@@ -125,71 +122,64 @@ const products: Product[] = [
 const defaultTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user1.name",
     image: user1img,
-    review:
-      "আমি এখান থেকে নিয়মিত তাজা সবজি কিনছি। পণ্যের মান অসাধারণ এবং ডেলিভারি খুবই দ্রুত ছিল। কৃষকদের সরাসরি সাহায্য করতে পেরে ভালো লাগছে।",
+    review: "testimonials.user1.review",
     rating: 4,
   },
   {
     id: 2,
-    name: "কলিন্স ম্যাক্সওয়েল",
+    name: "testimonials.user2.name",
     image: user2img,
-    review:
-      "সবজির সতেজতা সত্যিই প্রশংসনীয়। বাজার থেকে কেনার চেয়ে সরাসরি খামারের পণ্য পাওয়ার অভিজ্ঞতা দারুণ। আমি সবাইকে এটি ব্যবহারের পরামর্শ দেব।",
+    review: "testimonials.user2.review",
     rating: 5,
   },
   {
     id: 3,
-    name: "মি. লিন্স",
+    name: "testimonials.user3.name",
     image: user3img,
-    review:
-      "অর্ডার প্রক্রিয়া খুব সহজ এবং পরিষ্কার ছিল। সবজিগুলো একদম ফ্রেশ ছিল, কোনো কৃত্রিম কেমিক্যাল ছাড়াই প্রাকৃতিকভাবে উৎপাদিত মনে হয়েছে।",
+    review: "testimonials.user3.review",
     rating: 4,
   },
   {
     id: 4,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user4.name",
     image: user4img,
-    review:
-      "খুবই সাশ্রয়ী মূল্যে সেরা মানের পণ্য পেলাম। মধ্যস্বত্বভোগী না থাকায় কৃষকরা যেমন সঠিক দাম পাচ্ছেন, আমরাও ন্যায্যমূল্যে তাজা জিনিস পাচ্ছি।",
+    review: "testimonials.user4.review",
     rating: 5,
   },
   {
     id: 5,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user5.name",
     image: user5img,
-    review:
-      "প্যাকেজিং এবং কাস্টমার সার্ভিস চমৎকার ছিল। করলা এবং বেগুনগুলোর কোয়ালিটি বাজারের চেয়ে অনেক ভালো ছিল। অবশ্যই আবার অর্ডার করব।",
+    review: "testimonials.user5.review",
     rating: 5,
   },
   {
     id: 6,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user6.name",
     image: user6img,
-    review:
-      "ডিজিটাল প্ল্যাটফর্মে সরাসরি খামারের পণ্য পাওয়ার এই উদ্যোগটি অসাধারণ। টমেটোগুলো একদম রসালো এবং ফ্রেশ ছিল। খুবই সন্তুষ্ট!",
+    review: "testimonials.user6.review",
     rating: 5,
   },
   {
     id: 7,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user7.name",
     image: user7img,
-    review:
-      "আলু এবং পটলের মান খুবই ভালো ছিল। পরিবারের স্বাস্থ্যের জন্য এই ধরনের রাসায়নিক মুক্ত ও তাজা সবজি অত্যন্ত প্রয়োজন। ধন্যবাদ আপনাদের!",
+    review: "testimonials.user7.review",
     rating: 5,
   },
   {
     id: 8,
-    name: "ম্যাক্স কলিন্স",
+    name: "testimonials.user8.name",
     image: user8img,
-    review:
-      "সহজ পেমেন্ট এবং দ্রুত ডেলিভারি ব্যবস্থা। সবচেয়ে বড় কথা, পণ্যগুলোর সতেজতা ঘরে বসেই পাওয়া যাচ্ছে। এটি আমাদের সময় ও অর্থ দুটোই বাঁচায়।",
+    review: "testimonials.user8.review",
     rating: 5,
   },
 ];
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <>
       {/* banner section */}
@@ -199,17 +189,14 @@ const Home = () => {
           {/* Header */}
           <div className="mb-12 text-center">
             <h2 className="text-5xl font-bold text-gray-900 mb-2 text-balance">
-              খামারের তাজা পণ্য <br className="hidden sm:block" />
-              সরাসরি আপনার{" "}
+              {t(`home.heroTitle1`)} <br className="hidden sm:block" />
+              {t(`home.heroTitle2`)}{" "}
               <span className="bg-gradient-to-r from-green-600 to-emerald-500 bg-clip-text text-transparent">
-                ঘরে
+                {t(`home.heroTitleSpan`)}
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mt-4">
-              আপনার স্থানীয় অ্যাগ্রোমার্ট গ্রুপ সেন্টারে পুরো মৌসুম জুড়ে সেরা
-              ফসল ফলানোর জন্য খামারের প্রয়োজনীয় সবকিছু রয়েছে। আমাদের অনেক
-              সেন্টারে প্লাস্টিক, দড়ি, পশুখাদ্য এবং অন্যান্য সাধারণ পণ্যসহ
-              জনপ্রিয় খামার সামগ্রীও পাওয়া যায়।
+              {t(`home.heroDescription`)}
             </p>
           </div>
 
@@ -220,7 +207,9 @@ const Home = () => {
                 className="bg-yellow-400 hover:bg-green-600 text-black hover:text-white px-6 py-2.5 rounded-full text-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0"
                 key={category.id}
               >
-                {category.name}
+                {t(
+                  `categories.${category.name.toLowerCase().replace(/[^a-z]/g, "")}`,
+                )}
               </button>
             ))}
           </div>
@@ -236,12 +225,12 @@ const Home = () => {
                 <div className="relative h-64 sm:h-72 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
                   <img
                     src={product.image}
-                    alt={product.name}
+                    alt={t(product.name)}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   {product.discount && (
                     <button className="absolute top-4 right-4 bg-red-500 hover:bg-red-600 text-white text-xs px-3 py-1 rounded-full shadow-lg">
-                      {product.discount}% ছাড়
+                      {product.discount}% {t(`products.off`)}
                     </button>
                   )}
                 </div>
@@ -250,7 +239,9 @@ const Home = () => {
                 <div className="p-6">
                   {/* Product Title */}
                   <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
-                    {product.name}
+                    {/* {t(`products.${product.name.toLowerCase().replace(/[^a-z]/g, '')}`)}
+                     */}
+                    {t(product.name)}
                   </h3>
 
                   {/* Price Section */}
@@ -267,7 +258,7 @@ const Home = () => {
 
                   {/* Description */}
                   <p className="text-sm text-gray-600 mb-6 line-clamp-2 leading-relaxed">
-                    {product.description}
+                    {t(product.description)}
                   </p>
 
                   {/* Action Buttons */}
@@ -277,7 +268,7 @@ const Home = () => {
                       className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-xl font-semibold transition-all duration-300 group/btn"
                     >
                       <Eye className="w-4 h-4 mr-2 group-hover/btn:rotate-12 transition-transform" />
-                      আরও দেখুন
+                      {t(`products.seemore`)}
                     </Button>
 
                     <Button
@@ -285,7 +276,7 @@ const Home = () => {
                       className="flex-1 bg-gradient-to-r from-green-600 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl group/btn"
                     >
                       <ShoppingCart className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                      কার্টে যোগ করুন
+                      {t(`products.addToCart`)}
                     </Button>
                   </div>
                 </div>
@@ -301,12 +292,10 @@ const Home = () => {
           {/* Header Section */}
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 text-balance">
-              আমাদের ক্রেতাদের মতামত
+              {t(`home.testimonialsTitle`)}
             </h1>
             <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto text-balance">
-              গুণগত মান, সতেজতা এবং নির্ভরযোগ্য সেবার জন্য ক্রেতাদের বিশ্বস্ত।
-              আমরা খামার থেকে আপনার টেবিলে সেরা পণ্যটি পৌঁছে দিতে
-              প্রতিশ্রুতিবদ্ধ।
+              {t(`home.testimonialsSubtitle`)}
             </p>
           </div>
 
@@ -339,7 +328,7 @@ const Home = () => {
                     <div className="relative mb-6">
                       <img
                         src={testimonial.image}
-                        alt={testimonial.name}
+                        alt={t(testimonial.name)}
                         className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-emerald-200 shadow-md hover:scale-105 transition-transform duration-300"
                       />
                       <div className="absolute bottom-0 right-0 bg-emerald-500 rounded-full p-2 shadow-md">
@@ -349,7 +338,7 @@ const Home = () => {
 
                     {/* Customer Name */}
                     <h3 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                      {testimonial.name}
+                      {t(testimonial.name)}
                     </h3>
 
                     {/* Star Rating */}
@@ -368,7 +357,7 @@ const Home = () => {
 
                     {/* Review Text */}
                     <p className="text-slate-600 text-sm md:text-base leading-relaxed italic">
-                      "{testimonial.review}"
+                      "{t(testimonial.review)}" {/* <-- Updated */}
                     </p>
                   </div>
                 </SwiperSlide>

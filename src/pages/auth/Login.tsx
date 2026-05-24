@@ -9,11 +9,13 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSeletor } from "../../services/helper/redux";
 import { toast } from "sonner";
 import { loginUser } from "../../store/slices/authSlice";
+import { useTranslation } from "react-i18next"; // <-- Added import
 
 const Login = () => {
   const { loading, loginError } = useAppSeletor((state) => state.auth);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation(); 
 
   const {
     formState: { errors },
@@ -21,7 +23,7 @@ const Login = () => {
     handleSubmit,
     register,
   } = useForm<LoginType>({
-    resolver: yupResolver(loginSchema),
+    resolver: yupResolver(loginSchema(t)),
     defaultValues: {
       email: "",
       password: "",
@@ -58,9 +60,11 @@ const Login = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-12 text-white">
-          <h2 className="text-4xl font-bold mb-4">স্বাগতম অ্যাগ্রোমার্ট বাজারে!</h2>
+          <h2 className="text-4xl font-bold mb-4">
+            {t("loginPage.sidebarTitle")}
+          </h2>
           <p className="text-lg max-w-md">
-            আপনার অ্যাকাউন্টে লগইন করে সরাসরি মাঠের তাজা ফসল কেনাবেচা শুরু করুন।
+            {t("loginPage.sidebarDesc")}
           </p>
         </div>
       </div>
@@ -72,16 +76,16 @@ const Login = () => {
           className="flex flex-col items-center gap-3 w-full max-w-md p-8 bg-yellow-100/80 backdrop-blur-sm rounded-2xl shadow-xl border border-yellow-200"
         >
           <h1 className="font-bold text-2xl pb-2 text-gray-800 text-center">
-            অ্যাকাউন্টে লগইন করুন
+            {t("loginPage.formTitle")}
           </h1>
           <p className="text-sm text-gray-600 text-center mb-4">
-            কৃষক ও ক্রেতাদের সরাসরি যুক্ত করার বিশ্বস্ত প্ল্যাটফর্ম
+            {t("loginPage.formSubtitle")}
           </p>
 
           {login.map((input) => (
             <DynamicInput<LoginType>
               key={String(input.name)}
-              label={input.label}
+              label={t(input.label)} 
               required={input.required}
               register={register}
               type={input.type}
@@ -108,16 +112,16 @@ const Login = () => {
               fontSize: "1rem"
             }}
           >
-            প্রবেশ করুন
+            {t("loginPage.submitBtn")}
           </Button>
 
           <p className="text-sm text-gray-700 mt-4">
-            অ্যাকাউন্ট নেই?{" "}
+            {t("loginPage.noAccount")}{" "}
             <NavLink 
               to={"/register"} 
               className="text-green-600 font-bold hover:underline transition-all"
             >
-              নিবন্ধন করুন
+              {t("loginPage.registerLink")}
             </NavLink>
           </p>
         </form>

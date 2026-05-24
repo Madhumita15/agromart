@@ -2,62 +2,58 @@ import AboutSlider from "../../components/AboutSlider";
 import aboutimg1 from "../../assets/about1.jpg";
 import aboutimg2 from "../../assets/about2.jpg";
 import { useState } from "react";
-import user4img from '../../assets/user4.jpg'
-import user5img from '../../assets/user5.jpg'
-import user6img from '../../assets/user6.jpg'
+import { useTranslation } from "react-i18next";
+import user4img from '../../assets/user4.jpg';
+import user5img from '../../assets/user5.jpg';
+import user6img from '../../assets/user6.jpg';
 
 const About = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useTranslation();
 
   interface Farmer {
     id: number;
-    name: string;
+    nameKey: string;
     image: string;
-    content: string;
+    contentKey: string;
   }
 
   const farmers: Farmer[] = [
     {
       id: 1,
-      name: "করিম মিয়া",
+      nameKey: "aboutPage.farmers.farmer1.name",
       image: user4img,
-      content:
-        '"আমাদের উৎপাদিত পণ্য সরাসরি ক্রেতাদের কাছে পৌঁছানোর এই মাধ্যমটি অসাধারণ। এতে আমরা ফসলের সঠিক দাম পাচ্ছি এবং ক্রেতারাও ফ্রেশ সবজি পাচ্ছেন।"',
+      contentKey: "aboutPage.farmers.farmer1.content",
     },
     {
       id: 2,
-      name: "রহমত আলী",
+      nameKey: "aboutPage.farmers.farmer2.name",
       image: user6img,
-      content:
-        '"কোনো মধ্যস্বত্বভোগী ছাড়া সরাসরি ব্যবসা করার সুযোগ পেয়ে আমরা কৃষকরা অত্যন্ত আনন্দিত। রাসায়নিক মুক্ত তাজা সবজি সবার ঘরে পৌঁছে দেওয়াই আমাদের লক্ষ্য।"',
+      contentKey: "aboutPage.farmers.farmer2.content",
     },
     {
       id: 3,
-      name: "আব্দুল কুদ্দুস",
+      nameKey: "aboutPage.farmers.farmer3.name",
       image: user5img,
-      content:
-        '"অ্যাগ্রোমার্ট আমাদের পরিশ্রমের সঠিক মূল্যায়ন করেছে। এখন আমরা আত্মবিশ্বাসের সাথে আরও উন্নত মানের ও বিষমুক্ত ফসল চাষে মনোযোগ দিতে পারছি।"',
+      contentKey: "aboutPage.farmers.farmer3.content",
     },
     {
       id: 4,
-      name: "সফুরন নেছা",
+      nameKey: "aboutPage.farmers.farmer4.name",
       image: user4img,
-      content:
-        '"নারী উদ্যোক্তা হিসেবে নিজের খামারের পণ্য সরাসরি বিক্রি করতে পারা আমার জন্য অনেক বড় প্রাপ্তি। ক্রেতাদের ভালো সাড়া পেয়ে আমি খুবই আনন্দিত।"',
+      contentKey: "aboutPage.farmers.farmer4.content",
     },
     {
       id: 5,
-      name: "বিলাল হোসেন",
+      nameKey: "aboutPage.farmers.farmer5.name",
       image: user5img,
-      content:
-        '"মাঠের তাজা ফসল কোনো ঝামেলা ছাড়াই সরাসরি ক্রেতার রান্নাঘরে পৌঁছে যাচ্ছে। এই আধুনিক চাষাবাদ ও বিপণন ব্যবস্থা আমাদের জীবন বদলে দিয়েছে।"',
+      contentKey: "aboutPage.farmers.farmer5.content",
     },
     {
       id: 6,
-      name: "সামসুল হক",
+      nameKey: "aboutPage.farmers.farmer6.name",
       image: user6img,
-      content:
-        '"আমরা সম্পূর্ণ প্রাকৃতিকভাবে এবং পরম যত্নে প্রতিটি ফসল ফলাই। এই প্ল্যাটফর্মের মাধ্যমে ক্রেতারাও শতভাগ খাঁটি ও সতেজ পণ্যের নিশ্চয়তা পাচ্ছেন।"',
+      contentKey: "aboutPage.farmers.farmer6.content",
     },
   ];
 
@@ -81,11 +77,11 @@ const About = () => {
     <>
       <AboutSlider />
 
-      <section className="about  pb-5 bg-gradient-to-r from-yellow-300 to-pink-400">
+      <section className="about pb-5 bg-gradient-to-r from-yellow-300 to-pink-400">
         <div className="container mx-auto max-w-[1200px]">
-          <div className="flex flex-wrap  ">
+          <div className="flex flex-wrap">
             {/* First Column */}
-            <div className="w-full lg:w-1/2 pt-28  first px-3">
+            <div className="w-full lg:w-1/2 pt-28 first px-3">
               <figure>
                 <img
                   src={aboutimg1}
@@ -96,17 +92,17 @@ const About = () => {
 
               <div className="mt-3">
                 <h1 className="text-[2rem] font-bold">
-                  অ্যাগ্রোমার্ট গ্রুপ আসলে কারা?
+                  {t("aboutPage.whoWeAreTitle")}
                 </h1>
 
                 <p className="text-[1.25rem] mt-2 leading-relaxed font-semibold">
-                  আমরা আপনার ফসল উৎপাদনের নির্ভরযোগ্য অংশীদার। অ্যাগ্রোমার্ট গ্রুপ ভালো করেই বোঝে যে চাষাবাদ কেবল কোনো ব্যবসা নয়, এটি একটি জীবনধারা। আপনি চাষ করেন কারণ আপনি রোপণ মৌসুম থেকে শুরু করে ফসল কাটা পর্যন্ত আপনার ফসলের যত্ন নিতে ভালোবাসেন। চাষাবাদ ছাড়া অন্য কিছু করার কথা আপনি ভাবতেই পারেন না। অ্যাগ্রোমার্ট গ্রুপে আমরা আপনার এই আবেগ ও পরিশ্রমকে গভীরভাবে উপলব্ধি করি।
+                  {t("aboutPage.whoWeAreDesc")}
                 </p>
               </div>
             </div>
 
             {/* Second Column */}
-            <div className="w-full lg:w-2/5 pt-96  second px-6">
+            <div className="w-full lg:w-2/5 pt-96 second px-6">
               <figure>
                 <img
                   src={aboutimg2}
@@ -116,10 +112,10 @@ const About = () => {
               </figure>
 
               <div className="mt-3">
-                <h1 className="text-[2rem] font-bold">আমাদের লক্ষ্য</h1>
+                <h1 className="text-[2rem] font-bold">{t("aboutPage.ourMissionTitle")}</h1>
 
                 <p className="text-[1.25rem] mt-2 leading-relaxed font-semibold">
-                  আমরা আপনার ফসল উৎপাদনের নির্ভরযোগ্য অংশীদার। অ্যাগ্রোমার্ট গ্রুপ বিশ্বাস করে যে কৃষি শুধু জীবিকা নয়, এটি দেশের অর্থনৈতিক মেরুদণ্ড। চাষের শুরু থেকে ফসল ঘরে তোলা পর্যন্ত প্রতিটি ধাপে কৃষকদের পাশে থাকাই আমাদের মূল লক্ষ্য।
+                  {t("aboutPage.ourMissionDesc")}
                 </p>
               </div>
             </div>
@@ -132,10 +128,10 @@ const About = () => {
           {/* Header Section */}
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-balance">
-              আমাদের কঠোর পরিশ্রমী কৃষকবৃন্দ
+              {t("aboutPage.farmersHeaderTitle")}
             </h1>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed text-pretty">
-              গুণগত মান, সতেজতা এবং নির্ভরযোগ্য সেবার জন্য ক্রেতাদের কাছে বিশ্বস্ত। আমরা মাঠ থেকে সরাসরি আপনার টেবিলে সেরা পণ্যটি পৌঁছে দিতে নিরলসভাবে কাজ করে যাচ্ছি।
+              {t("aboutPage.farmersHeaderDesc")}
             </p>
           </div>
 
@@ -152,7 +148,7 @@ const About = () => {
                   <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-green-200 to-green-100">
                     <img
                       src={farmer.image}
-                      alt={farmer.name}
+                      alt={t(farmer.nameKey)}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -162,12 +158,12 @@ const About = () => {
                   <div className="p-6 md:p-8">
                     {/* Name */}
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
-                      {farmer.name}
+                      {t(farmer.nameKey)}
                     </h3>
 
                     {/* Quote */}
                     <p className="text-sm md:text-base text-gray-700 leading-relaxed italic border-l-4 border-green-500 pl-4">
-                      {farmer.content}
+                      {t(farmer.contentKey)}
                     </p>
                   </div>
                 </div>

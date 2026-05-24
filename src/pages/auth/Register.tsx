@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { SignupSchema } from "../../services/validation/signup.validation";
+import { signupSchema } from "../../services/validation/signup.validation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signup } from "../../services/json/inputsData/signup.input";
 import DynamicInput from "../../components/DynamicInput";
@@ -10,12 +10,14 @@ import type { RegisterFormValues } from "../../typescript/type/auth.type";
 import { useAppDispatch, useAppSeletor } from "../../services/helper/redux";
 import { registerUser } from "../../store/slices/authSlice";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next"; // <-- Added translation engine
 
 const Register = () => {
   const [preview, setPreview] = useState("");
   const { loading, registerError } = useAppSeletor((state) => state.auth);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { t } = useTranslation(); 
 
   const {
     formState: { errors },
@@ -24,7 +26,7 @@ const Register = () => {
     register,
     setValue,
   } = useForm<RegisterFormValues>({
-    resolver: yupResolver(SignupSchema),
+    resolver: yupResolver(signupSchema(t)),
     defaultValues: {
       name: "",
       email: "",
@@ -49,9 +51,9 @@ const Register = () => {
 
   return (
     <>
-      {/* ফুল স্ক্রিন লেআউট: বামে ইমেজ এবং ডানে ফর্ম */}
+    
       <div className="flex h-screen w-full items-center justify-center bg-gray-50">
-        {/* বাম দিক: সুন্দর কৃষিভিত্তিক ছবি */}
+       
         <div className="hidden lg:block lg:w-1/2 h-full relative">
           <img
             src="https://images.unsplash.com/photo-1498408040764-ab6eb772a145?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -59,30 +61,30 @@ const Register = () => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-12 text-white">
-            <h2 className="text-4xl font-bold mb-4">সরাসরি কৃষকের খামার থেকে</h2>
+            <h2 className="text-4xl font-bold mb-4">{t("registerPage.sidebarTitle")}</h2>
             <p className="text-lg max-w-md">
-              অ্যাগ্রোমার্ট প্ল্যাটফর্মে যুক্ত হয়ে মধ্যস্বত্বভোগী ছাড়াই কিনুন একদম তাজা ও রাসায়নিক মুক্ত খাঁটি পণ্য।
+              {t("registerPage.sidebarDesc")}
             </p>
           </div>
         </div>
 
-        {/* ডান দিক: রেজিস্ট্রেশন ফর্ম */}
+      
         <div className="w-full lg:w-1/2 h-full flex items-center justify-center p-6 sm:p-12 bg-gradient-to-br from-amber-50 to-white overflow-y-auto">
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="flex flex-col items-center gap-3 w-full max-w-md p-8 bg-yellow-100/80 backdrop-blur-sm rounded-2xl shadow-xl border border-yellow-200"
           >
             <h1 className="font-bold text-2xl pb-2 text-gray-800 text-center">
-              নতুন অ্যাকাউন্ট তৈরি করুন
+              {t("registerPage.formTitle")}
             </h1>
             <p className="text-sm text-gray-600 text-center mb-4">
-              কৃষক ও ক্রেতাদের সরাসরি যোগাযোগের ডিজিটাল বাজার
+              {t("registerPage.formSubtitle")}
             </p>
 
             {signup.map((input) => (
               <DynamicInput<RegisterFormValues>
                 key={String(input.name)}
-                label={input.label}
+                label={t(input.label)} 
                 required={input.required}
                 register={register}
                 type={input.type}
@@ -93,23 +95,23 @@ const Register = () => {
               />
             ))}
 
-            {/* প্রোফাইল ছবি আপলোড সেকশন */}
+          
             <div className="flex flex-col mt-3 gap-2 items-center w-full">
               <label className="text-sm font-semibold text-gray-700 self-start">
-                প্রোফাইল ছবি যুক্ত করুন:
+                {t("registerPage.imageLabel")}
               </label>
               <div className="flex items-center justify-center mb-2">
                 {preview ? (
                   <img
                     src={preview}
-                    alt="প্রিভিউ"
+                    alt={t("registerPage.formTitle")}
                     width={90}
                     height={90}
                     className="rounded-full object-cover border-2 border-green-600 shadow-md"
                   />
                 ) : (
                   <div className="w-[90px] h-[90px] rounded-full border-2 border-dashed border-gray-400 flex justify-center items-center text-sm text-gray-500 bg-white">
-                    ছবি নেই
+                    {t("registerPage.noImage")}
                   </div>
                 )}
               </div>
@@ -147,16 +149,16 @@ const Register = () => {
                 fontSize: "1rem"
               }}
             >
-              {loading ? <CircularProgress size={24} color="inherit" /> : "নিবন্ধন করুন"}
+              {loading ? <CircularProgress size={24} color="inherit" /> : t("registerPage.submitBtn")}
             </Button>
 
             <p className="text-sm text-gray-700 mt-4">
-              ইতিমধ্যে অ্যাকাউন্ট আছে?{" "}
+              {t("registerPage.alreadyHaveAccount")}{" "}
               <NavLink 
                 to={"/login"} 
                 className="text-green-600 font-bold hover:underline transition-all"
               >
-                লগইন করুন
+                {t("registerPage.loginLink")}
               </NavLink>
             </p>
           </form>

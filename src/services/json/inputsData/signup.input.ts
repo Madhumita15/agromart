@@ -2,19 +2,19 @@ import type { InputInterface } from "../../../typescript/interface/auth.interfac
 
 export const signup: InputInterface[] = [
     {
-        label: "আপনার নাম",
+        label: "registerPage.inputs.name",
         type: "text",
         required: true,
         name: "name"
     },
     {
-        label: "ইমেইল ঠিকানা",
+        label: "registerPage.inputs.email",
         type: "text",
         required: true,
         name: "email"
     },
     {
-        label: "পাসওয়ার্ড",
+        label: "registerPage.inputs.password",
         type: "password",
         required: true,
         name: "password"
