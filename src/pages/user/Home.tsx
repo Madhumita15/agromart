@@ -71,7 +71,7 @@ const products: Product[] = [
     originalPrice: 30,
     currentPrice: 20,
     discount: 10,
-    description: "products.productspotatoesDesc",
+    description: "products.potatoesDesc",
     image: productimg1,
   },
   {
