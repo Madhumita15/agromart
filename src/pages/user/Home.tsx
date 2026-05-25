@@ -1,6 +1,6 @@
 import Slider from "../../components/Slider";
 import Video from "../../components/Video";
-import { ShoppingCart, Eye } from "lucide-react";
+import { ShoppingCart, Eye, Heart } from "lucide-react";
 import { Button } from "@mui/material";
 import productimg1 from "../../assets/cardimg1.jpg";
 import productimg2 from "../../assets/cardimg7.jpg";
@@ -23,6 +23,9 @@ import user6img from "../../assets/user6.jpg";
 import user7img from "../../assets/user6.jpg";
 import user8img from "../../assets/user5.jpg";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 interface Testimonial {
   id: number;
@@ -41,7 +44,6 @@ interface Product {
   description: string;
   image: string;
 }
-
 
 const productCategory = [
   {
@@ -178,8 +180,79 @@ const defaultTestimonials: Testimonial[] = [
   },
 ];
 
+interface Farmer {
+  id: number;
+  nameKey: string;
+  image: string;
+  contentKey: string;
+}
+
+const farmers: Farmer[] = [
+  {
+    id: 1,
+    nameKey: "aboutPage.farmers.farmer1.name",
+    image: user4img,
+    contentKey: "aboutPage.farmers.farmer1.content",
+  },
+  {
+    id: 2,
+    nameKey: "aboutPage.farmers.farmer2.name",
+    image: user6img,
+    contentKey: "aboutPage.farmers.farmer2.content",
+  },
+  {
+    id: 3,
+    nameKey: "aboutPage.farmers.farmer3.name",
+    image: user5img,
+    contentKey: "aboutPage.farmers.farmer3.content",
+  },
+  {
+    id: 4,
+    nameKey: "aboutPage.farmers.farmer4.name",
+    image: user4img,
+    contentKey: "aboutPage.farmers.farmer4.content",
+  },
+  {
+    id: 5,
+    nameKey: "aboutPage.farmers.farmer5.name",
+    image: user5img,
+    contentKey: "aboutPage.farmers.farmer5.content",
+  },
+  {
+    id: 6,
+    nameKey: "aboutPage.farmers.farmer6.name",
+    image: user6img,
+    contentKey: "aboutPage.farmers.farmer6.content",
+  },
+];
+
 const Home = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [wishList, setWishList] = useState<number[]>([]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + farmers.length) % farmers.length);
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % farmers.length);
+  };
+
+  const getVisibleFarmers = () => {
+    const visible = [];
+    for (let i = 0; i < 3; i++) {
+      visible.push(farmers[(currentIndex + i) % farmers.length]);
+    }
+    return visible;
+  };
+
+  const handleToggleWishList = (id: number)=>{
+    setWishList((prev)=> (
+      prev.includes(id) ? prev.filter((item)=> item !== id) : [...prev, id]
+    ))
+  }
   return (
     <>
       {/* banner section */}
@@ -237,12 +310,14 @@ const Home = () => {
 
                 {/* Content Container */}
                 <div className="p-6">
-                  {/* Product Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
-                    {/* {t(`products.${product.name.toLowerCase().replace(/[^a-z]/g, '')}`)}
-                     */}
-                    {t(product.name)}
-                  </h3>
+                  <div className="flex justify-between">
+                    {/* Product Title */}
+                    <h3 className="text-xl  font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
+                      {t(product.name)}
+                    </h3>
+                    <button onClick={()=> handleToggleWishList(product.id)}>{wishList.includes(product.id) ? <FavoriteIcon className="text-red-700" /> : <Heart className="text-red-700" />} </button>
+                    
+                  </div>
 
                   {/* Price Section */}
                   <div className="flex items-center gap-3 mb-4">
@@ -264,6 +339,11 @@ const Home = () => {
                   {/* Action Buttons */}
                   <div className="flex gap-3">
                     <Button
+                      onClick={() =>
+                        navigate(`/productById/${product.id}`, {
+                          state: product,
+                        })
+                      }
                       variant="outlined"
                       className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-xl font-semibold transition-all duration-300 group/btn"
                     >
@@ -285,6 +365,116 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <section className="w-full bg-gradient-to-b from-green-50 to-white py-12 md:py-16 lg:py-20 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Header Section */}
+          <div className="text-center mb-12 md:mb-16">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-balance">
+              {t("aboutPage.farmersHeaderTitle")}
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed text-pretty">
+              {t("aboutPage.farmersHeaderDesc")}
+            </p>
+          </div>
+
+          {/* Carousel Container */}
+          <div className="relative">
+            {/* Slides */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {getVisibleFarmers().map((farmer) => (
+                <div
+                  key={farmer.id}
+                  className="group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden border border-green-100 hover:border-green-300"
+                >
+                  {/* Image Container */}
+                  <div className="relative h-48 md:h-56 overflow-hidden bg-gradient-to-br from-green-200 to-green-100">
+                    <img
+                      src={farmer.image}
+                      alt={t(farmer.nameKey)}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  {/* Content Container */}
+                  <div className="p-6 md:p-8">
+                    {/* Name */}
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
+                      {t(farmer.nameKey)}
+                    </h3>
+
+                    {/* Quote */}
+                    <p className="text-sm md:text-base text-gray-700 leading-relaxed italic border-l-4 border-green-500 pl-4">
+                      {t(farmer.contentKey)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-center gap-4 mt-10 md:mt-12">
+              <button
+                onClick={goToPrevious}
+                className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+                aria-label="Previous slide"
+              >
+                <svg
+                  className="w-6 h-6 md:w-7 md:h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Indicator Dots */}
+              <div className="flex gap-2">
+                {farmers.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      index === currentIndex
+                        ? "bg-green-600 w-3 h-3 md:w-4 md:h-4"
+                        : "bg-green-300 w-2 h-2 md:w-3 md:h-3 hover:bg-green-400"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={goToNext}
+                className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 active:scale-95"
+                aria-label="Next slide"
+              >
+                <svg
+                  className="w-6 h-6 md:w-7 md:h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Video />
 
       <section className="w-full py-12 md:py-16 lg:py-20 px-4 md:px-6 bg-gradient-to-br from-slate-50 to-slate-100">

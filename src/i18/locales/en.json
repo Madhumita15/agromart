@@ -14,179 +14,230 @@
     "seeds": "Nuts & Seeds"
   },
   "products": {
-  "potatoes": "Fresh Potatoes",
-  "potatoesDesc": "Naturally grown, nutrient-rich potatoes for the best taste.",
-  "eggplant": "Premium Quality Eggplant",
-  "eggplantDesc": "Fresh eggplants supplied directly from the farm with consistent quality and freshness.",
-  "tomato": "Fresh Tomatoes",
-  "tomatoDesc": "Naturally grown, nutrient-rich juicy tomatoes perfect for daily cooking.",
-  "pointedGourd": "Fresh Pointed Gourd (Potol)",
-  "pointedGourdDesc": "Naturally grown, nutrient-rich pointed gourds for healthy and delicious meals.",
-  "okra": "Fresh Okra / Ladies Finger",
-  "okraDesc": "Fresh, high-quality okra cultivated using modern farming methods to ensure excellent yield and great taste.",
-  "bitterGourd": "Fresh Bitter Gourd (Korola)",
-  "bitterGourdDesc": "Naturally grown, nutrient-rich bitter gourd known for its health benefits and unique taste.",
-  "viewDetails": "View Details",
-  "addToCart": "Add to Cart",
-  "off": "OFF",
-  "seemore": "View More"
-},
-
-"testimonials": {
-  "user1": { "name": "Max Collins", "review": "I buy fresh vegetables from here regularly. The product quality is amazing and the delivery was very fast. It feels great to support farmers directly." },
-  "user2": { "name": "Collins Maxwell", "review": "The freshness of the vegetables is truly commendable. Getting products straight from the farm is a much better experience than buying from the market. I highly recommend it to everyone." },
-  "user3": { "name": "Mr. Lins", "review": "The ordering process was very simple and clear. The vegetables were perfectly fresh, and they felt naturally grown without any artificial chemicals." },
-  "user4": { "name": "Max Collins", "review": "Got the best quality products at a very affordable price. Since there are no middlemen, farmers get the right price and we get fresh items at a fair rate." },
-  "user5": { "name": "Max Collins", "review": "The packaging and customer service were excellent. The quality of the bitter gourd and eggplants was much better than the local market. Will definitely order again." },
-  "user6": { "name": "Max Collins", "review": "This initiative to get farm-fresh products directly on a digital platform is extraordinary. The tomatoes were completely juicy and fresh. Extremely satisfied!" },
-  "user7": { "name": "Max Collins", "review": "The quality of potatoes and pointed gourds was excellent. These kinds of chemical-free, fresh vegetables are essential for family health. Thank you!" },
-  "user8": { "name": "Max Collins", "review": "Easy payment and quick delivery system. Most importantly, the freshness of the farm reaches right to our home. It saves us both time and money." }
-},
-
-"videoSection": {
-  "headingLine1": "Our Work Process",
-  "headingLine2": "Take a Look at a Glance",
-  "subheading": "We collect chemical-free and fresh produce directly from the field, carefully sort and package it, so that it reaches your doorstep exactly on time."
-},
-"slider": {
-  "description": "Our platform directly provides farmers with high-quality fertilizers, crop protection, efficient application methods for fertilizers and pesticides, premium quality seeds, and other essential agricultural services.",
-  "slide1": { "title": "Your Trusted Partner in Crop Production" },
-  "slide2": { "title": "Expert Agricultural Solutions" },
-  "slide3": { "title": "The Future of Sustainable Agriculture" }
-},
-"aboutSlider": {
-  "description": "The Agromart Group provides agricultural producers and farmers across Eastern Canada with fertilizer, crop protection, custom application, seed products, and other related services.",
-  "slide1": { "title": "Your Trusted Partner in Crop Production" },
-  "slide2": { "title": "Expert Agricultural Solutions" },
-  "slide3": { "title": "The Future of Sustainable Agriculture" }
-},
-"productSlider": {
-  "description": "The Agromart Group provides agricultural producers and farmers across Eastern Canada with fertilizer, crop protection, custom application, seed products, and other related services.",
-  "slide1": { "title": "Your Trusted Partner in Crop Production" },
-  "slide2": { "title": "Expert Agricultural Solutions" },
-  "slide3": { "title": "The Future of Sustainable Agriculture" }
-},
-"navbar": {
-  "home": "Home",
-  "about": "About Us",
-  "products": "Products",
-  "contact": "Contact",
-  "becomeFarmer": "Become a Farmer",
-  "login": "Login",
-  "searchPlaceholder": "Search products...",
-  "searchBtn": "Search"
-},
-"footer": {
-  "homeTitle": "Home",
-  "info": "Information",
-  "privacy": "Privacy",
-  "cookies": "Cookies",
-  "aboutTitle": "About Us",
-  "address": "Plot 46A, Sector 5, Bhosari",
-  "directors": "Board of Directors",
-  "createPage": "Create a Page",
-  "mission": "Our Mission",
-  "helpCenter": "Help Center",
-  "brandName": "Agromart",
-  "privacyPolicy": "Privacy Policy",
-  "copyright": "© 2026"
-},
-"aboutPage": {
-  "whoWeAreTitle": "Who is the Agromart Group?",
-  "whoWeAreDesc": "We are your trusted partner in crop production. The Agromart Group understands well that farming is not just a business; it is a way of life. You farm because you love taking care of your crops from the planting season all the way to harvest. You cannot imagine doing anything else. At Agromart Group, we deeply understand and value your passion and hard work.",
-  "ourMissionTitle": "Our Mission",
-  "ourMissionDesc": "We are your trusted partner in crop production. The Agromart Group believes that agriculture is not just a livelihood, it is the economic backbone of the country. Our main mission is to stand by farmers at every stage, from the beginning of cultivation to bringing the harvest home.",
-  "farmersHeaderTitle": "Our Hardworking Farmers",
-  "farmersHeaderDesc": "Trusted by buyers for quality, freshness, and reliable service. We work relentlessly to deliver the best products directly from the field to your table.",
-  "farmers": {
-    "farmer1": { "name": "Karim Mia", "content": "\"This method of delivering our produce directly to buyers is extraordinary. It allows us to get the right price for our crops, and buyers get fresh vegetables too.\"" },
-    "farmer2": { "name": "Rahmat Ali", "content": "\"We farmers are extremely happy to have the opportunity to do business directly without any middlemen. Providing chemical-free fresh vegetables to everyone's home is our goal.\"" },
-    "farmer3": { "name": "Abdul Kuddus", "content": "\"Agromart has truly valued our hard work. Now we can confidently focus on growing better quality and chemical-free crops.\"" },
-    "farmer4": { "name": "Sofuron Nesa", "content": "\"As a woman entrepreneur, being able to sell my farm's produce directly is a massive achievement for me. I am delighted with the wonderful response from buyers.\"" },
-    "farmer5": { "name": "Bilal Hossain", "content": "\"Fresh harvest from the field goes straight to the buyer's kitchen without any hassle. This modern farming and marketing system has changed our lives.\"" },
-    "farmer6": { "name": "Samsul Haque", "content": "\"We grow every crop completely naturally and with utmost care. Through this platform, buyers are guaranteed 100% authentic and fresh products.\"" }
-  }
-},
-"productList": {
-  "titleMain": "Farm Fresh Products",
-  "titleDirectly": "Directly To Your",
-  "titleHighlight": "Home",
-  "description": "Your local Agromart Group center has everything you need for farming to grow the best crops all season long. Many of our centers also stock popular farming supplies, including plastics, ropes, animal feed, and other general merchandise."
-},
-"loginPage": {
-  "emailLabel": "Email Address",
-  "passwordLabel": "Password",
-  "sidebarTitle": "Welcome to Agromart Market!",
-  "sidebarDesc": "Log in to your account and start buying and selling fresh crops directly from the field.",
-  "formTitle": "Log In to Account",
-  "formSubtitle": "The trusted platform directly connecting farmers and buyers",
-  "submitBtn": "Log In",
-  "noAccount": "Don't have an account?",
-  "registerLink": "Register Here"
-},
-"registerPage": {
-  "sidebarTitle": "Directly from the Farmer's Farm",
-  "sidebarDesc": "Join the Agromart platform and buy perfectly fresh, chemical-free, authentic products without any middlemen.",
-  "formTitle": "Create New Account",
-  "formSubtitle": "A digital marketplace for direct communication between farmers and buyers",
-  "imageLabel": "Add Profile Picture:",
-  "noImage": "No Image",
-  "submitBtn": "Register",
-  "alreadyHaveAccount": "Already have an account?",
-  "loginLink": "Log In",
-  "inputs": {
-    "name": "Your Name",
-    "email": "Email Address",
-    "password": "Password"
-  }
-},
-"validation": {
-  "nameRequired": "Name is Required",
-  "emailRequired": "Email is required",
-  "emailInvalid": "Invalid Email Address",
-  "passwordRequired": "Password is required",
-  "passwordMin": "Password must be at least 6 characters"
-},
-"loginValidation": {
-  "emailRequired": "Email is required",
-  "emailInvalid": "Invalid Email Address",
-  "passwordRequired": "Password is required",
-  "passwordMin": "Password must be at least 6 characters"
-},
-"farmerPage": {
-  "sidebarTag": "Agromart Merchant Network",
-  "sidebarTitle": "The Digital Marketplace to Get the Right Price for Your Crops!",
-  "sidebarDesc": "Sell your farm-fresh products directly to consumers. Grow your business without middlemen and become a profitable smart farmer today.",
-  "formTitle": "Join as a Farmer",
-  "formSubtitle": "Register your farm in the digital market in simple steps",
-  "paymentLabel": "Preferred Payment Acceptance Method",
-  "paymentCash": "Cash",
-  "paymentUpi": "UPI / Mobile Banking",
-  "imageLabel": "Add Profile Picture:",
-  "noImage": "No Image",
-  "submitBtn": "Submit Application",
-  "inputs": {
-    "name": "Full Name",
-    "email": "Email Address (Optional)",
-    "password": "Password",
-    "phoneNumber": "Phone Number",
-    "farmLocation": "Farm Location",
-    "NID": "NID Number"
+    "potatoes": "Fresh Potatoes",
+    "potatoesDesc": "Naturally grown, nutrient-rich potatoes for the best taste.",
+    "eggplant": "Premium Quality Eggplant",
+    "eggplantDesc": "Fresh eggplants supplied directly from the farm with consistent quality and freshness.",
+    "tomato": "Fresh Tomatoes",
+    "tomatoDesc": "Naturally grown, nutrient-rich juicy tomatoes perfect for daily cooking.",
+    "pointedGourd": "Fresh Pointed Gourd (Potol)",
+    "pointedGourdDesc": "Naturally grown, nutrient-rich pointed gourds for healthy and delicious meals.",
+    "okra": "Fresh Okra / Ladies Finger",
+    "okraDesc": "Fresh, high-quality okra cultivated using modern farming methods to ensure excellent yield and great taste.",
+    "bitterGourd": "Fresh Bitter Gourd (Korola)",
+    "bitterGourdDesc": "Naturally grown, nutrient-rich bitter gourd known for its health benefits and unique taste.",
+    "viewDetails": "View Details",
+    "addToCart": "Add to Cart",
+    "off": "OFF",
+    "seemore": "View More"
   },
-  "farmerValidation": {
-    "emailInvalid": "Invalid Email",
-    "passwordRequired": "Password is required",
-    "passwordMin": "Password must be at least 6 characters",
+
+  "testimonials": {
+    "user1": {
+      "name": "Max Collins",
+      "review": "I buy fresh vegetables from here regularly. The product quality is amazing and the delivery was very fast. It feels great to support farmers directly."
+    },
+    "user2": {
+      "name": "Collins Maxwell",
+      "review": "The freshness of the vegetables is truly commendable. Getting products straight from the farm is a much better experience than buying from the market. I highly recommend it to everyone."
+    },
+    "user3": {
+      "name": "Mr. Lins",
+      "review": "The ordering process was very simple and clear. The vegetables were perfectly fresh, and they felt naturally grown without any artificial chemicals."
+    },
+    "user4": {
+      "name": "Max Collins",
+      "review": "Got the best quality products at a very affordable price. Since there are no middlemen, farmers get the right price and we get fresh items at a fair rate."
+    },
+    "user5": {
+      "name": "Max Collins",
+      "review": "The packaging and customer service were excellent. The quality of the bitter gourd and eggplants was much better than the local market. Will definitely order again."
+    },
+    "user6": {
+      "name": "Max Collins",
+      "review": "This initiative to get farm-fresh products directly on a digital platform is extraordinary. The tomatoes were completely juicy and fresh. Extremely satisfied!"
+    },
+    "user7": {
+      "name": "Max Collins",
+      "review": "The quality of potatoes and pointed gourds was excellent. These kinds of chemical-free, fresh vegetables are essential for family health. Thank you!"
+    },
+    "user8": {
+      "name": "Max Collins",
+      "review": "Easy payment and quick delivery system. Most importantly, the freshness of the farm reaches right to our home. It saves us both time and money."
+    }
+  },
+
+  "videoSection": {
+    "headingLine1": "Our Work Process",
+    "headingLine2": "Take a Look at a Glance",
+    "subheading": "We collect chemical-free and fresh produce directly from the field, carefully sort and package it, so that it reaches your doorstep exactly on time."
+  },
+  "slider": {
+    "description": "Our platform directly provides farmers with high-quality fertilizers, crop protection, efficient application methods for fertilizers and pesticides, premium quality seeds, and other essential agricultural services.",
+    "slide1": { "title": "Your Trusted Partner in Crop Production" },
+    "slide2": { "title": "Expert Agricultural Solutions" },
+    "slide3": { "title": "The Future of Sustainable Agriculture" }
+  },
+  "aboutSlider": {
+    "description": "The Agromart Group provides agricultural producers and farmers across Eastern Canada with fertilizer, crop protection, custom application, seed products, and other related services.",
+    "slide1": { "title": "Your Trusted Partner in Crop Production" },
+    "slide2": { "title": "Expert Agricultural Solutions" },
+    "slide3": { "title": "The Future of Sustainable Agriculture" }
+  },
+  "productSlider": {
+    "description": "The Agromart Group provides agricultural producers and farmers across Eastern Canada with fertilizer, crop protection, custom application, seed products, and other related services.",
+    "slide1": { "title": "Your Trusted Partner in Crop Production" },
+    "slide2": { "title": "Expert Agricultural Solutions" },
+    "slide3": { "title": "The Future of Sustainable Agriculture" }
+  },
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact",
+    "becomeFarmer": "Become a Farmer",
+    "login": "Login",
+    "searchPlaceholder": "Search products...",
+    "searchBtn": "Search"
+  },
+  "footer": {
+    "homeTitle": "Home",
+    "info": "Information",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "aboutTitle": "About Us",
+    "address": "Plot 46A, Sector 5, Bhosari",
+    "directors": "Board of Directors",
+    "createPage": "Create a Page",
+    "mission": "Our Mission",
+    "helpCenter": "Help Center",
+    "brandName": "Agromart",
+    "privacyPolicy": "Privacy Policy",
+    "copyright": "© 2026"
+  },
+  "aboutPage": {
+    "whoWeAreTitle": "Who is the Agromart Group?",
+    "whoWeAreDesc": "We are your trusted partner in crop production. The Agromart Group understands well that farming is not just a business; it is a way of life. You farm because you love taking care of your crops from the planting season all the way to harvest. You cannot imagine doing anything else. At Agromart Group, we deeply understand and value your passion and hard work.",
+    "ourMissionTitle": "Our Mission",
+    "ourMissionDesc": "We are your trusted partner in crop production. The Agromart Group believes that agriculture is not just a livelihood, it is the economic backbone of the country. Our main mission is to stand by farmers at every stage, from the beginning of cultivation to bringing the harvest home.",
+    "farmersHeaderTitle": "Our Hardworking Farmers",
+    "farmersHeaderDesc": "Trusted by buyers for quality, freshness, and reliable service. We work relentlessly to deliver the best products directly from the field to your table.",
+    "farmers": {
+      "farmer1": {
+        "name": "Karim Mia",
+        "content": "\"This method of delivering our produce directly to buyers is extraordinary. It allows us to get the right price for our crops, and buyers get fresh vegetables too.\""
+      },
+      "farmer2": {
+        "name": "Rahmat Ali",
+        "content": "\"We farmers are extremely happy to have the opportunity to do business directly without any middlemen. Providing chemical-free fresh vegetables to everyone's home is our goal.\""
+      },
+      "farmer3": {
+        "name": "Abdul Kuddus",
+        "content": "\"Agromart has truly valued our hard work. Now we can confidently focus on growing better quality and chemical-free crops.\""
+      },
+      "farmer4": {
+        "name": "Sofuron Nesa",
+        "content": "\"As a woman entrepreneur, being able to sell my farm's produce directly is a massive achievement for me. I am delighted with the wonderful response from buyers.\""
+      },
+      "farmer5": {
+        "name": "Bilal Hossain",
+        "content": "\"Fresh harvest from the field goes straight to the buyer's kitchen without any hassle. This modern farming and marketing system has changed our lives.\""
+      },
+      "farmer6": {
+        "name": "Samsul Haque",
+        "content": "\"We grow every crop completely naturally and with utmost care. Through this platform, buyers are guaranteed 100% authentic and fresh products.\""
+      }
+    }
+  },
+  "productList": {
+    "titleMain": "Farm Fresh Products",
+    "titleDirectly": "Directly To Your",
+    "titleHighlight": "Home",
+    "description": "Your local Agromart Group center has everything you need for farming to grow the best crops all season long. Many of our centers also stock popular farming supplies, including plastics, ropes, animal feed, and other general merchandise."
+  },
+  "loginPage": {
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "sidebarTitle": "Welcome to Agromart Market!",
+    "sidebarDesc": "Log in to your account and start buying and selling fresh crops directly from the field.",
+    "formTitle": "Log In to Account",
+    "formSubtitle": "The trusted platform directly connecting farmers and buyers",
+    "submitBtn": "Log In",
+    "noAccount": "Don't have an account?",
+    "registerLink": "Register Here"
+  },
+  "registerPage": {
+    "sidebarTitle": "Directly from the Farmer's Farm",
+    "sidebarDesc": "Join the Agromart platform and buy perfectly fresh, chemical-free, authentic products without any middlemen.",
+    "formTitle": "Create New Account",
+    "formSubtitle": "A digital marketplace for direct communication between farmers and buyers",
+    "imageLabel": "Add Profile Picture:",
+    "noImage": "No Image",
+    "submitBtn": "Register",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginLink": "Log In",
+    "inputs": {
+      "name": "Your Name",
+      "email": "Email Address",
+      "password": "Password"
+    }
+  },
+  "validation": {
     "nameRequired": "Name is Required",
-    "locationRequired": "Farm Location is Required",
-    "nidRequired": "NID is required",
-    "nidDigitsOnly": "NID must contain only numbers",
-    "nidLength": "NID must be exactly 17 digits",
-    "phoneRequired": "Phone Number is Required",
-    "phoneDigitsOnly": "Phone Number must contain only numbers",
-    "phoneLength": "Phone Number must be exactly 10 digits",
-    "paymentRequired": "Payment method is required",
-    "imageRequired": "Profile image is required"
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid Email Address",
+    "passwordRequired": "Password is required",
+    "passwordMin": "Password must be at least 6 characters"
+  },
+  "loginValidation": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Invalid Email Address",
+    "passwordRequired": "Password is required",
+    "passwordMin": "Password must be at least 6 characters"
+  },
+  "farmerPage": {
+    "sidebarTag": "Agromart Merchant Network",
+    "sidebarTitle": "The Digital Marketplace to Get the Right Price for Your Crops!",
+    "sidebarDesc": "Sell your farm-fresh products directly to consumers. Grow your business without middlemen and become a profitable smart farmer today.",
+    "formTitle": "Join as a Farmer",
+    "formSubtitle": "Register your farm in the digital market in simple steps",
+    "paymentLabel": "Preferred Payment Acceptance Method",
+    "paymentCash": "Cash",
+    "paymentUpi": "UPI / Mobile Banking",
+    "imageLabel": "Add Profile Picture:",
+    "noImage": "No Image",
+    "submitBtn": "Submit Application",
+    "inputs": {
+      "name": "Full Name",
+      "email": "Email Address (Optional)",
+      "password": "Password",
+      "phoneNumber": "Phone Number",
+      "farmLocation": "Farm Location",
+      "NID": "NID Number"
+    },
+    "farmerValidation": {
+      "emailInvalid": "Invalid Email",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password must be at least 6 characters",
+      "nameRequired": "Name is Required",
+      "locationRequired": "Farm Location is Required",
+      "nidRequired": "NID is required",
+      "nidDigitsOnly": "NID must contain only numbers",
+      "nidLength": "NID must be exactly 17 digits",
+      "phoneRequired": "Phone Number is Required",
+      "phoneDigitsOnly": "Phone Number must contain only numbers",
+      "phoneLength": "Phone Number must be exactly 10 digits",
+      "paymentRequired": "Payment method is required",
+      "imageRequired": "Profile image is required"
+    }
+  },
+  "singleProduct": {
+    "title": "Product Details",
+    "smallDescription": "Explore full specifications, pricing information, and exclusive offers available for this item. Add it to your cart or buy now to enjoy premium delivery services.",
+    "cardDescription": "Description",
+    "buyNow": "Buy Now",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "products": "Products"
   }
-}
 }

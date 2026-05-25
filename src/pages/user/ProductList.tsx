@@ -8,21 +8,18 @@ import productimg6 from "../../assets/cardimg12.jpg";
 // import productimg7 from "../../assets/cardimg8.jpg";
 // import productimg8 from "../../assets/cardimg2.jpg";
 import { Button } from "@mui/material";
-import { Eye, ShoppingCart } from "lucide-react";
+import { Eye, Heart, ShoppingCart } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import type { Product } from "../../typescript/interface/product.interface";
+import { useState } from "react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ProductList = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate()
+  const [wishList, setWishList] = useState<number[]>([])
 
-  interface Product {
-    id: number;
-    name: string;
-    originalPrice: number;
-    currentPrice: number;
-    discount?: number;
-    description: string;
-    image: string;
-  }
 
   const productCategory = [
     {
@@ -50,7 +47,7 @@ const ProductList = () => {
       originalPrice: 30,
       currentPrice: 20,
       discount: 10,
-      description: "products.productspotatoesDesc",
+      description: "products.potatoesDesc",
       image: productimg1,
     },
     {
@@ -99,6 +96,13 @@ const ProductList = () => {
       image: productimg6,
     },
   ];
+
+  const handleToggleWishList = (id: number)=>{
+    setWishList((prev)=> (
+      prev.includes(id) ? prev.filter((item)=> item !== id) : [...prev, id]
+
+    ))
+  }
 
   return (
     <>
@@ -156,12 +160,14 @@ const ProductList = () => {
 
                 {/* Content Container */}
                 <div className="p-6">
-                  {/* Product Title */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
-                    {/* {t(`products.${product.name.toLowerCase().replace(/[^a-z]/g, '')}`)}
-                     */}
-                    {t(product.name)}
-                  </h3>
+                  <div className="flex justify-between">
+                    {/* Product Title */}
+                    <h3 className="text-xl  font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-green-600 transition-colors">
+                      {t(product.name)}
+                    </h3>
+                    <button onClick={()=> handleToggleWishList(product.id)}>{wishList.includes(product.id) ? <FavoriteIcon className="text-red-700 "  /> : <Heart className="text-red-700"/>} </button>
+                    
+                  </div>
 
                   {/* Price Section */}
                   <div className="flex items-center gap-3 mb-4">
@@ -183,6 +189,9 @@ const ProductList = () => {
                   {/* Action Buttons */}
                   <div className="flex gap-3">
                     <Button
+                    onClick={()=> navigate(`/productById/${product.id}`,  {
+                      state: product
+                    })}
                       variant="outlined"
                       className="flex-1 border-2 border-green-600 text-green-600 hover:bg-green-50 rounded-xl font-semibold transition-all duration-300 group/btn"
                     >

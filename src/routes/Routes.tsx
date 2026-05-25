@@ -3,7 +3,6 @@ import Home from '../pages/user/Home'
 import UserWrapper from '../layout/user/UserWrapper'
 import About from '../pages/user/About'
 import ProductList from '../pages/user/ProductList'
-import SingleProduct from '../pages/user/SingleProduct'
 import Contact from '../pages/user/Contact'
 import AdminWrapper from '../layout/admin/AdminWrapper'
 import Dashboard from '../pages/admin/Dashboard'
@@ -13,6 +12,7 @@ import User from '../pages/admin/User'
 import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
 import BecomeFarmer from '../pages/user/BecomeFarmer'
+import ProductById from '../pages/user/ProductById'
 
 
 const routes = createBrowserRouter([
@@ -41,16 +41,16 @@ const routes = createBrowserRouter([
                 element: <ProductList />
             },
             {
-                path: "/singleproduct/:id",
-                element: <SingleProduct />
-            },
-            {
                 path: "/contact",
                 element: <Contact />
             },
             {
                 path: "/becomeFarmer",
                 element: <BecomeFarmer />
+            },
+            {
+                path: "/productById/:id",
+                element: <ProductById />
             }
             
         ]
