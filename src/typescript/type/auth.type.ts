@@ -12,6 +12,13 @@ export type LoginType = {
 }
 
 
+export type ContactType = {
+  name: string;
+  email: string
+  subject: string;
+  message: string
+}
+
 export type RegisterFormValues = {
    name: string,
    email: string,

@@ -13,6 +13,8 @@ import Login from '../pages/auth/Login'
 import Register from '../pages/auth/Register'
 import BecomeFarmer from '../pages/user/BecomeFarmer'
 import ProductById from '../pages/user/ProductById'
+import Cart from '../pages/user/Cart'
+import WishList from '../pages/user/WishList'
 
 
 const routes = createBrowserRouter([
@@ -51,6 +53,14 @@ const routes = createBrowserRouter([
             {
                 path: "/productById/:id",
                 element: <ProductById />
+            },
+            {
+                path: "/cart",
+                element: <Cart />
+            },
+            {
+                path: "/wishlist",
+                element: <WishList />
             }
             
         ]

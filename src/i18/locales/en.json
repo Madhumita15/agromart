@@ -239,5 +239,97 @@
     "home": "Home",
     "aboutUs": "About Us",
     "products": "Products"
+  },
+  "productListFilters": {
+    "title": "Filters",
+    "searchLabel": "Search Product",
+    "searchPlaceholder": "Search Product here...",
+    "sortLabel": "Sort By",
+    "sortDefault": "Default Sorting",
+    "sortAsc": "Name: A to Z",
+    "sortDesc": "Name: Z to A",
+    "sortLowHigh": "Price: Low to High",
+    "sortHighLow": "Price: High to Low",
+    "categoryLabel": "Category",
+    "allCategories": "All Categories",
+    "priceRangeLabel": "Price Range",
+    "maxPrice": "Max: ₹{{val}}",
+    "availabilityLabel": "Availability",
+    "inStock": "In Stock",
+    "onSale": "On Sale / Discounts",
+    "clearBtn": "Clear Filters"
+  },
+  "pagination": {
+    "prev": "Prev",
+    "next": "Next",
+    "pageIndicator": "Page {{count}}"
+  },
+  "cart": {
+    "accessibilityLabel": "Shopping Cart",
+    "count": "{{count, number}}"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions or need assistance? Drop us a message and our team will get back to you shortly.",
+    "submitBtn": "Send Message",
+    "phoneTitle": "Customer Service Number",
+    "emailTitle": "Customer Service Email",
+    "hoursTitle": "Business Hours",
+    "hoursValue": "Mon - Sat: 9:00 AM - 6:00 PM",
+    "addressTitle": "Headquarters Office",
+    "addressValue": "Sector 62, Electronic City, Noida, UP - 201301",
+    "labels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required"
+    },
+    "faqSection": {
+      "title": "Frequently Asked Questions",
+      "q1": "How long does it take to process my order?",
+      "a1": "Orders are normally processed within 24 to 48 working hours depending on inventory availability.",
+      "q2": "Do you provide tracking details for bulk shipments?",
+      "a2": "Yes, live tracking info is transmitted via SMS and registered email as soon as the logistics carrier picks up the shipment.",
+      "q3": "Can I modify my delivery location post dispatch?",
+      "a3": "Location modifications can only be requested prior to dispatch. Please contact your dedicated account manager for real-time adjustments."
+    }
+  },
+  "cartPage": {
+    "title": "Shopping Cart ({{count}} Items)",
+    "empty": "Your cart is empty!",
+    "qty": "Qty:",
+    "remove": "Remove",
+    "summaryTitle": "Price Details",
+    "price": "Price",
+    "delivery": "Delivery Charges",
+    "free": "FREE",
+    "total": "Total Amount",
+    "checkoutBtn": "Proceed to Checkout",
+    "items": {
+      "item1_title": "Premium Organic Basmati Rice (5KG Bundle)",
+      "item1_desc": "Seller: AgroMart Retail",
+      "item2_title": "Fresh Hybrid Tomato Seeds (Pack of 500)",
+      "item2_desc": "Seller: Krishi Kalyan Seeds"
+    }
+  },
+  "wishlistPage": {
+    "title": "My Wishlist ({{count}} Items)",
+    "empty": "Your wishlist is empty!",
+    "addToCart": "Add to Cart",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "remove": "Remove",
+    "items": {
+      "item1_title": "Organic NPK Liquid Fertilizer for Plants (1 Litre)",
+      "item2_title": "High-Yield Hybrid Watermelon Seeds (Pack of 200)",
+      "item3_title": "Ergonomic Heavy-Duty Agricultural Hand Trowel"
+    }
   }
 }

@@ -1,8 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { useTranslation } from 'react-i18next';
+import { Heart, Menu, ShoppingCart, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -51,6 +51,24 @@ const Navbar = () => {
 
             {/* Desktop Language select & Action utilities */}
             <div className="flex items-center space-x-4 ">
+              <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700" onClick={()=> navigate("/wishlist")}>
+                <Heart  />
+              </button>
+              <button
+                className="relative p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group"
+                onClick={() => navigate("/cart")}
+              >
+                {/* Shopping Cart Icon */}
+                <ShoppingCart
+                  size={24}
+                  className=" text-white group-hover:text-green-700 transition-colors"
+                />
+
+                {/* Pure Notification Count Badge */}
+                <span className="absolute -top-1 -right-1 bg-green-700 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white shadow-sm">
+                  {t("cart.count", { count: 1 })}
+                </span>
+              </button>
               <button
                 onClick={() => {
                   navigate("/becomeFarmer");
@@ -58,7 +76,7 @@ const Navbar = () => {
                 }}
                 className="text-sm font-bold bg-green-800 text-white px-5 py-2 rounded-lg hover:bg-white hover:border-2 hover:border-green-800 hover:text-green-800 border-2 border-transparent transition-all duration-200"
               >
-                {t('navbar.becomeFarmer')}
+                {t("navbar.becomeFarmer")}
               </button>
 
               <div className="relative">
@@ -72,8 +90,12 @@ const Navbar = () => {
                   <option value="hi">हिन्दी</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
               </div>
@@ -82,7 +104,7 @@ const Navbar = () => {
                 onClick={() => navigate("/login")}
                 className="text-sm font-bold bg-green-800 text-white px-5 py-2 rounded-lg hover:bg-white hover:border-2 hover:border-green-800 hover:text-green-800 border-2 border-transparent transition-all duration-200"
               >
-                {t('navbar.login')}
+                {t("navbar.login")}
               </button>
             </div>
           </div>
@@ -94,7 +116,11 @@ const Navbar = () => {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle Menu"
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
@@ -123,7 +149,27 @@ const Navbar = () => {
 
             {/* Mobile Actions, Utility bar & Inputs */}
             <div className="space-y-3 px-4">
-              
+               <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700 " onClick={()=> {
+                navigate("/wishlist")
+                setMobileOpen(false)
+                }}>
+                <Heart />
+              </button>
+                <button
+                className="relative ml-5 p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group"
+                onClick={() => navigate("/cart")}
+              >
+                {/* Shopping Cart Icon */}
+                <ShoppingCart
+                  size={24}
+                  className=" text-white group-hover:text-green-700 transition-colors"
+                />
+
+                {/* Pure Notification Count Badge */}
+                <span className="absolute -top-1 -right-1 bg-green-700 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center border-2 border-white shadow-sm">
+                  {t("cart.count", { count: 1 })}
+                </span>
+              </button>
 
               <button
                 onClick={() => {
@@ -132,9 +178,9 @@ const Navbar = () => {
                 }}
                 className="w-full text-center text-sm font-bold bg-green-800 text-white py-2.5 rounded-lg hover:bg-green-900 block"
               >
-                {t('navbar.becomeFarmer')}
+                {t("navbar.becomeFarmer")}
               </button>
-             
+
               <div className="relative">
                 <select
                   value={i18n.language}
@@ -146,8 +192,12 @@ const Navbar = () => {
                   <option value="hi">हिन्दी</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-700">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  <svg
+                    className="fill-current h-4 w-4"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                   </svg>
                 </div>
               </div>
@@ -159,7 +209,7 @@ const Navbar = () => {
                 }}
                 className="w-full text-center text-sm font-bold bg-green-800 text-white py-2.5 rounded-lg hover:bg-green-900 block"
               >
-                {t('navbar.login')}
+                {t("navbar.login")}
               </button>
             </div>
           </div>
