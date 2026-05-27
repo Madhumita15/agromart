@@ -51,11 +51,11 @@ const Navbar = () => {
 
             {/* Desktop Language select & Action utilities */}
             <div className="flex items-center space-x-4 ">
-              <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700" onClick={()=> navigate("/wishlist")}>
+              <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700 border-transparent transition-all duration-200 border-2" onClick={()=> navigate("/wishlist")}>
                 <Heart  />
               </button>
               <button
-                className="relative p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group"
+                className="relative p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group border-2 border-transparent duration-200"
                 onClick={() => navigate("/cart")}
               >
                 {/* Shopping Cart Icon */}
@@ -149,14 +149,14 @@ const Navbar = () => {
 
             {/* Mobile Actions, Utility bar & Inputs */}
             <div className="space-y-3 px-4">
-               <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700 " onClick={()=> {
+               <button className="hover:bg-white p-2 rounded-full text-white bg-green-700 hover:border-2 hover:border-green-700 hover:text-green-700 border-2 border-transparent transition-all duration-200" onClick={()=> {
                 navigate("/wishlist")
                 setMobileOpen(false)
                 }}>
                 <Heart />
               </button>
                 <button
-                className="relative ml-5 p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group"
+                className="relative ml-5 p-2 transition-transform active:scale-95 hover:border-2 hover:border-green-700 bg-green-700  hover:bg-green-50 rounded-full group border-2 border-transparent  duration-200"
                 onClick={() => navigate("/cart")}
               >
                 {/* Shopping Cart Icon */}

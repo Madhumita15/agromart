@@ -311,13 +311,13 @@ const ProductList = () => {
 
               {/* Fully Responsive Pagination UI Elements */}
               <div className="flex items-center justify-between border-t border-gray-100 pt-6 mt-4 w-full">
-                <button className="bg-green-600 hover:bg-white hover:text-black hover:border-2 hover:border-green-700 text-white font-medium rounded-xl px-5 py-2 text-sm transition-colors shadow-sm hover:shadow active:scale-95 duration-200">
+                <button className="bg-green-600 hover:bg-white hover:text-black border-2  hover:border-2 hover:border-green-700 text-white font-medium rounded-xl px-5 py-2 text-sm transition-colors shadow-sm hover:shadow active:scale-95 duration-200">
                   {t("pagination.prev")}
                 </button>
                 <span className="text-sm font-semibold text-gray-600 bg-gray-100 px-4 py-2 rounded-xl">
                   {t("pagination.pageIndicator", { count: 1 })}
                 </span>
-                <button className="bg-red-600 hover:bg-white hover:text-black hover:border-2 hover:border-red-700 text-white hover:red-green-700 font-medium rounded-xl px-5 py-2 text-sm transition-colors shadow-sm hover:shadow active:scale-95 duration-200">
+                <button className="bg-red-600 hover:bg-white hover:text-black border-2 hover:border-2 hover:border-red-700 text-white hover:red-green-700 font-medium rounded-xl px-5 py-2 text-sm transition-colors shadow-sm hover:shadow active:scale-95 duration-200">
                   {t("pagination.next")}
                 </button>
               </div>
